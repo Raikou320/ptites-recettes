@@ -1,0 +1,206 @@
+:root {
+  --footer-fieldset-padding: 2%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  margin-bottom: auto;
+}
+
+header #logo {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: clamp(5vh, 100px, 15vh);
+  aspect-ratio: 1/1;
+  background-position: 50% 50%;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url('./assets/icon.jpg');
+}
+
+header nav {
+  display: grid;
+  place-items: center;
+  background: repeating-conic-gradient(
+    from 45deg,
+    #006750 0% 25%,
+    #005056 0% 50%
+  );
+  background-size: max(10vh, 10vw) max(10vh, 10vw);
+  background-color: #006750;
+  height: 100%;
+  width: 100%;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+header nav ul li {
+  margin: 5px;
+}
+
+header nav ul li a,
+header nav ul li span {
+  background: linear-gradient(135deg, #0f2, #f02, #f20, #2f0);
+  background-clip: text;
+  color: transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: repeating-conic-gradient(
+    from 85deg,
+    #653000 0% 25%,
+    #756456 0% 50%
+  );
+  height: 60vh;
+}
+
+main section {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main section#popular-recipes {
+  text-align: center;
+  border: 1px solid black;
+  margin: 0;
+  height: 98%;
+  width: 100%;
+  padding: 0;
+  background: linear-gradient(35deg, #005056, #986735, #006750);
+  position: relative;
+  z-index: 1;
+}
+
+main section#popular-recipes h1 {
+  color: rgb(1, 58, 105);
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+main section#popular-recipes #card {
+  aspect-ratio: 1/1;
+  background-image: url('./assets/icon.jpg');
+  padding: 0;
+  margin: 0;
+  z-index: -1;
+  position: relative;
+  background-position: 45% 50%;
+  background-size: 92.5% 100%;
+  background-repeat: no-repeat;
+  width: 30%;
+  height: 75.5%;
+  border-radius: 10%;
+  transition: transform 0.7s ease-in-out;
+}
+
+main section#popular-recipes #card:hover {
+  box-shadow: 5px 3px 2px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.01, 1.05) rotateY(30deg) rotateX(11.25deg);
+}
+
+main section#popular-recipes #card:active {
+  transform: scale(1.03, 1.07) rotateY(35deg) rotateX(12deg);
+}
+
+main section#popular-recipes #card article {
+  text-align: center;
+  user-select: none;
+  transform: scale(0.9);
+  color:rgb(10, 94, 100);
+  text-transform: capitalize;
+}
+
+main section#popular-recipes #card article:hover {
+  transform: scale(0.9);
+}
+
+main section#popular-recipes #card article ul li {
+  list-style: decimal;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  width: 100%;
+  margin-top: auto;
+  background: repeating-conic-gradient(
+    from 50deg,
+    #986735 0% 25%,
+    #755056 0% 50%
+  );
+  background-size: max(10vw, 10vh) max(10vw, 10vh);
+}
+
+footer fieldset {
+  width: 99%;
+  height: 97%;
+  padding: var(--footer-fieldset-padding);
+  box-sizing: border-box;
+}
+
+footer fieldset legend {
+  font-weight: bold;
+}
+
+footer fieldset a {
+  background: linear-gradient(45deg, rgb(39, 94, 204), rgb(28, 112, 196));
+  background-clip: text;
+  color: transparent;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  body {
+    font-size: medium;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+  header nav ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
