@@ -1,5 +1,5 @@
 function displayRecipe(elem) {
-  const recipes = JSON.parse(localStorage.getItem('recipes'));
+  const recipes = JSON.parse(localStorage.getItem('recipes')) || getRecipes();
   const random = Math.floor(Math.random() * recipes.length);
   const recipe = recipes[random];
   const { id, ...filteredRecipe } = recipe;
