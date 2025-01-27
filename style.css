@@ -1,7 +1,3 @@
-:root {
-  --footer-fieldset-padding: 2%;
-}
-
 body {
   display: flex;
   align-items: center;
@@ -12,7 +8,7 @@ body {
   width: 100%;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: small;
+  font-size: 1.3vw;
 }
 
 header {
@@ -22,7 +18,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20%;
+  height: 20vh;
   margin-bottom: auto;
 }
 
@@ -107,23 +103,33 @@ main section#popular-recipes h1 {
   position: absolute;
   top: 2%;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
 }
 
 main section#popular-recipes #card {
-  aspect-ratio: 1/1;
-  background-image: url('./assets/icon.jpg');
+  position: relative;
+  top: 5%;
   padding: 0;
   margin: 0;
-  z-index: -1;
-  position: relative;
-  background-position: 45% 50%;
-  background-size: 92.5% 100%;
-  background-repeat: no-repeat;
   width: 30%;
   height: 75.5%;
   border-radius: 10%;
   transition: transform 0.7s ease-in-out;
+}
+
+main section#popular-recipes #card::before {
+  background-image: url('./assets/icon.jpg');
+  z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: 45% 50%;
+  background-size: 92.5% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
 }
 
 main section#popular-recipes #card:hover {
@@ -139,8 +145,10 @@ main section#popular-recipes #card article {
   text-align: center;
   user-select: none;
   transform: scale(0.9);
-  color:rgb(10, 94, 100);
+  color: rgba(10, 94, 100, 1);
   text-transform: capitalize;
+  z-index: 1;
+  position: relative;
 }
 
 main section#popular-recipes #card article:hover {
@@ -155,7 +163,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 20%;
+  height: 20vh;
   width: 100%;
   margin-top: auto;
   background: repeating-conic-gradient(
@@ -167,9 +175,9 @@ footer {
 }
 
 footer fieldset {
-  width: 99%;
-  height: 97%;
-  padding: var(--footer-fieldset-padding);
+  width: 97%;
+  height: 95%;
+  padding: 2%;
   box-sizing: border-box;
 }
 
@@ -185,22 +193,51 @@ footer fieldset a {
 
 @media screen and (max-width: 768px) {
   body {
-    font-size: large;
+    font-size: 1.2vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
+
   header nav ul {
     flex-direction: column;
+  }
+
+  main section#popular-recipes h1,
+  main section#popular-recipes #card h2,
+  main section#popular-recipes #card h3 {
+    font-size: 0.9em;
+  }
+  
+  main section#popular-recipes #card {
+    transition: 0.6s ease-in-out;
+    width: 35%;
+  }
+
+  main section#popular-recipes #card:hover {
+    transform: scale(1.01, 1.02) rotateY(25deg) rotateX(2deg);
+  }
+
+  main section#popular-recipes #card:active {
+    transform: scale(1.02, 1.03) rotateY(30deg) rotateX(5deg)
+  }
+  footer fieldset {
+    height: 85%;
   }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px) {
   body {
-    font-size: medium;
+    font-size: 1.1vw;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
       'Lucida Sans', Arial, sans-serif;
   }
+
   header nav ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer fieldset {
+    width: 90%;
+    height: 90%;
   }
 }

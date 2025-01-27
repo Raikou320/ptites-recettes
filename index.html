@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="P'tites Recettes Est Un Simple Site De Recettes Sur Lequel Vous Pourez Poster, Suivre Des Recettes Élaborées Par Les Utilisateurs Du Site"
+    />
     <title>P'tites Recettes</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="shortcut icon" href="./assets/icon.jpg" type="image/x-icon" />
@@ -14,13 +18,16 @@
         <ul>
           <li>
             <span role="button" id="toggle-search-btn"
-              >Rechercher par catégorie</span
+              >Rechercher</span
             >
           </li>
           <li><span role="button" id="a-propos-btn">À propos</span></li>
           <li><a href="./recettes">Toutes Nos Recettes</a></li>
           <li>
-            <a href="https://github.com/Raikou320/ptites-recettes"
+            <a
+              href="https://github.com/Raikou320/ptites-recettes/issues"
+              target="_blank"
+              rel="noopener noreferrer"
               >Nous contacter</a
             >
           </li>
@@ -28,15 +35,24 @@
       </nav>
     </header>
     <main>
+      <section id="searchbar-section">
+        <h3>Barre De Recherche</h3>
+        <form>
+          <label for="searchbar"></label>
+        </form>
+      </section>
+      <section id="a-propos">
+      <h3>À Propos</h3>
+      </section>
       <section id="popular-recipes">
         <h1>Recettes Populaires</h1>
-        <div id="card">
+        <div id="card" class="popular-recipes__recipe-1">
           <article>
             <h2>lorem ipsum dolor sit amet pour 4 personnes</h2>
             <h3>Ingrédients:</h3>
             <h4>
               <ul>
-                <li>pi: 3.14159265358979323846 grammes</li>
+                <li>pi: 3.1415926535 grammes</li>
                 <li>19²: 361 grammes</li>
               </ul>
             </h4>
@@ -56,7 +72,7 @@
             <h3>Ingrédients:</h3>
             <h4>
               <ul>
-                <li>pi: 3.14159265358979323846 grammes</li>
+                <li>pi: 3.1415926535 grammes</li>
                 <li>19²: 361 grammes</li>
               </ul>
             </h4>
@@ -76,7 +92,7 @@
             <h3>Ingrédients:</h3>
             <h4>
               <ul>
-                <li>pi: 3.14159265358979323846 grammes</li>
+                <li>pi: 3.1415926535 grammes</li>
                 <li>19²: 361 grammes</li>
               </ul>
             </h4>
